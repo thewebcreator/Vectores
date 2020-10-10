@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<title>Vectores programación c++</title>
+	<style>
+	*{
+		background:black;
+		color: white;
+		font-family: ariel,helvetica;
+		line-height: 28px;
+		text-align: justify;
+	}
+	h1{
+		background-image: url(https://image.freepik.com/vector-gratis/fondo-tecnologia-abstracta-concepto-hacker-codificacion-programacion-codigo-computadora-binario-estilo-fondo-matriz_87788-185.jpg);
+		height: 50px;
+		border-color: gray;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	h3{
+
+	}
+	img{
+		float: left;
+		width: 200px;
+		height: 200px;
+		margin: 10px;
+	}
+	nav{
+		text-align: center;
+	}
+	.active{
+	background: #FFFFFF;
+    color:#000000;
+    }
+    .hover{
+    background: #FFFFFF;
+    color:#000000;
+	}
+	a{
+		border-radius: 15px 50px;
+		color: black;
+		background: white;
+		cursor: pointer;
+		text-decoration: none;
+		font-family: helvetica;
+		font-size: 17px;
+		cursor: pointer;
+		border:solid;
+		padding: 10px 10px 10px 10px;
+		margin:10px;
+	}
+	#otros
+	{
+	margin-left: 40px;
+	}
+	button{
+		font-size: 15px;
+	}
+	div{
+		text-align: center;
+	}
+	#Bibliografia{
+		color:blue;
+		border-color: white;
+	}
+	#Bibliografia1{
+		color:blue;
+		border-color: white;
+	}
+	ul,p .ejemplos{
+	margin-left: 70px;
+	font-family: helvetica;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Vectores</h1>
+		<br>
+		<nav>
+		  <a href="#uno">Definición</a>
+		  <a href="#uno">Declaración</a>
+	      <a href="#dos">Inicialización de un vector</a>
+	      <a href="#resumen">Resumen</a>	
+	      <a href="#ejercicio">Ejercicio de vectores</a>
+	      <a href="#ultimo">Bibliografía</a>
+		</nav>
+	    <br>
+		<img src="https://image.freepik.com/vector-gratis/desarrollo-software-programacion-codificacion-concepto-vector_123447-266.jpg" alt="Programación">
+		<h3 id="definicion">Definición</h3>
+		<p>En programación, se le denomina vector, formación, matriz o array a una zona de almacenamiento contiguo que contiene una serie de elementos del mismo tipo. Los vectores son utilizados para almacenar múltiples valores en una única variable. En un aspecto más profundo, los arrays, permiten almacenar muchos valores en posiciones de memoria continuas, lo cual permite acceder a un valor u otro de manera rápida y sencilla. Estos valores pueden ser números, letras o cualquier tipo de variable que deseemos incluso tipos de datos propios.</p>
+	</header>
+	<section>
+		<br>
+		<h3 id="uno">Declarando un vector</h3>
+		<p>Para declarar un vector en C++, se deben seguir las mismas normas básicas que se siguen para declarar una variable cualquiera, con un pequeño cambio en la sintaxis. Para declarar un array o como lo quieras llamar, necesitaremos saber el tipo de dato que irá al interior de este, es decir, números enteros, números decimales o cadenas de texto, etc. Necesitamos también, como siempre, un nombre para el vector y un tamaño máximo que se incluye en llaves. La sintaxis para declarar un vector en C++ es la siguiente:</p>
+		<p><button>tipo_de_dato nombre_del_vector[tamaño];</button></p>
+		<ul id="ejemplos">
+		   <li><h4>Ejemplo:</h4></li>
+		</ul>
+		   <button>int myvector[5];</button><br><br>
+		   Como ven en este caso declaramos un vector entero con nombre "myvector" el cual posee un tamaño de 5 elementos.
+		<ul>
+		   <li><h4>Más ejemplos</h4></li>
+		 </ul>
+		   <button>float vector1[6];</button>
+		   <button>char vector2[4];</button>
+		   <button>string vector3[2];</button>
+		<h3 id="dos">Inicialización de un vector</h3>
+		<p>En cuanto tenemos declarado un vector, es posible asignarle valores, evidentemente estos valores deben coincidir con el tipo de dato que le asignamos a dicho vector, no tendría sentido ingresar como valores de un vector cadenas de caracteres si el tipo de dato de dicho vector es numérico.</p>
+		<ul>
+			<li><h4>Ejemplos</h4></li>
+		</ul>
+			<button>int myvector[5]={3,4,5,6};</button><br><br>
+			Cuando conocemos los valores de nuestro vector podemos especificarlos igualándolos en la misma línea de declaración, abriendo corchetes y si el valor ingresado es numérico se escribe con separación a través de una coma, en cambio, si es de tipo char o string se hace en entre comillas y separados por comas.<br><br>
+			<button>char myvector1[4]={"lis","la","le","li"};</button><br><br>
+			Ahora es bueno mencionar que cada valor del vector tiene un índice en particular que empieza desde 0 hasta n siendo el tamaño del vector, por ejemplo, en el caso anterior nuestro valor char número uno tiene como indice el valor 0 y el valor "li" tiene como indice el valor numérico 3, por lo tanto si nosotros queremos acceder a algún valor de nuestro vector lo podemos hacer conociendo su índice.<br><br>
+			<button>int mivector2[3]={1,5,10};<br>cout &lt;	&lt; mivector[2];</button><br><br>
+			En este ejemplo lo que le estamos pidiendo al programa es que nos devuelva el elemento que tiene como índice dos.
+		<h3 id="tres">Llenando un vector</h3>
+		<ul>
+			<li><h4>Llenando el vector cuando se declara</h4></li>
+		</ul>
+			<p>Una forma de llenar el vector es asignando el valor de sus componentes al momento de definir el vector, es decir;</p>
+				<button>int myvector[5]={3,4,5,6};</button><br><br>
+			    <button>int vector[5]={3,4};</button><br>En este caso estamos diciendo que los demás valores son cero.<br><br>
+			    <button>int myvector[]={1,2,3,4};</button><br>En este caso no especificamos el tamaño pero como estamos agregando cuatro valores el vector se definirá como uno de tamaño cuatro.
+			 <ul>
+			<li><h4>Errores</h4></li>
+		    </ul>
+			<button>int vector[3]={1,2,3,45};</button>
+			<p>En este caso especificamos tamaño tres pero ingresamos cuatro valores, por lo tanto es incorrecto.
+			<ul>
+			<li><h4>Llenando el vector en el código del programa</h4></li>
+		    </ul>
+			<button>int numeros[100];<br>cout &lt;	&lt; "Digite el número de elementos que va a tener el arreglo"; cin 	&gt;&gt; n;<br> for(int i=1;i&lt; n;i++)<br>{<br>
+		    cout &lt; &lt; "Digite un número\n";<br>cin &gt;&gt; números[i];<br></button><br><br>
+	        En este caso lo que hacemos es utilizar un bucle o ciclo para pedir los valores, lo primero que hacemos es preguntar por el tamaño del vector y luego con nuestro ciclo nos encargamos de llenar nuestro vector.
+	 </section>
+	<h3 id="resumen">Resumen</h3>
+	<div>
+		<iframe width="853" height="480" src="https://www.youtube.com/embed/_QxU6aZvcu0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<h3 id="ejercicio">Ejercicio</h3>
+	<div >
+		<iframe width="853" height="480" src="https://www.youtube.com/embed/M_GGr_U4YcA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<h4 id="ultimo">Bibliografía</h4>
+	<ul id="Bibliografia">
+		<li><a href="https://www.programarya.com/Cursos/C++/Estructuras-de-Datos/Arreglos-o-Vectores">Pagina #1 de intéres</a></li>
+	</ul>
+	<ul id="Bibliografia1">
+	    <li><a  href="https://es.wikipedia.org/wiki/Vector.(inform%C3%A1tica)#:~:text=En%20programaci%C3%B3n%2C%20se%20le%20denomina,los%20elementos%20de%20la%20matriz.">Pagina #2 de intéres</a></li>
+	</ul>
+</body>
+</html>
